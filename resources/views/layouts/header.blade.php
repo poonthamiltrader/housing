@@ -45,6 +45,9 @@
             font-size: 12px;
             font-weight: bold;
         }
+        .error {
+            color: #ff0000 !important;
+        }
 
         .text-success {
             color: var(--vz-success-text-emphasis);

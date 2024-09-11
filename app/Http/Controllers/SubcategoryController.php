@@ -49,7 +49,7 @@ class SubcategoryController extends Controller
     {
         // dd($request);
         $rules = [
-            'name' => 'required|regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/|unique:subcategory,name',
+            'name' => 'required|regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/|unique:subcategory,name',
             'category_id' => 'required',
             'status' => 'required|in:1,2',
         ];
@@ -113,7 +113,7 @@ class SubcategoryController extends Controller
         $rules = [
             'name' => [
                 'required',
-                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/',
+                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/',
                 Rule::unique('subcategory')->ignore($id),
             ],
             'category_id' => 'required',

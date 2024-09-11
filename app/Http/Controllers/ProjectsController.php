@@ -12,9 +12,12 @@ use App\Models\Projectdetails;
 use App\Models\Projects;
 use App\Models\State;
 use Illuminate\Http\Request;
+use App\Traits\AjaxTableDataTrait;
 
 class ProjectsController extends Controller
 {
+    use AjaxTableDataTrait;
+
     /**
      * Display a listing of the resource.
      */
@@ -241,40 +244,16 @@ class ProjectsController extends Controller
         // dd($request);
         $model = Projectdetails::class;
         $entity = 'project';
-        $draw = $request->get('draw');
-        $start = $request->get("start");
-        $rowperpage = $request->get("length");
-        $searchValue = $request->get('search')['value'];
 
-        // Total records without filters
-        $totalRecords = $model::count();
+        $response = $this->getTableData($model, $entity, $request, function ($record, $sno) use ($entity) {
+            $editButton = $this->getEditButton($record->id, $entity);
+            $deleteButton = $this->getDeleteButton($record->id, $entity);
+            $viewButton = $this->getViewButton($record->id, $entity);
+            $statusBadge = $this->getStatusBadge($record->status);
+            $buildingStatusBadge = $this->getBuildingStatusBadge($record->building_status);
 
-        // Query for filtered records
-        $query = $model::query();
-
-        if (!empty($searchValue)) {
-            $query->where('name', 'LIKE', '%' . $searchValue . '%');
-        }
-
-        $totalRecordswithFilter = $query->count();
-
-        // Sorting and pagination
-        $query->orderBy('id', 'asc')->skip($start)->take($rowperpage);
-        $records = $query->get();
-
-        $data_arr = [];
-        // $sno = 0;
-        foreach ($records as $record) {
-            $editButton = '<a href="' . url('projects/' . $record->id . '/edit') . '" class="btn btn-primary waves-effect waves-light">
-            <i class="ri-pencil-fill"></i>
-        </a>';
-            $viewButton = '<button class="btn btn-success waves-effect waves-light" href="#" onclick="viewEntity(\'' . $record->id . '\', \'' . $entity . '\')"><i class="ri-eye-fill"></i></button>';
-            $deleteButton = '<button class="btn btn-danger waves-effect waves-light" href="#" onclick="deleteEntity(\'' . $record->id . '\', \'' . $entity . '\')"><i class="ri-delete-bin-fill"></i></button>';
-            $statusBadge = $record->status == 1 ? '<span class="badge bg-success-subtle text-success">Active</span>' : '<span class="badge bg-warning-subtle text-warning">Inactive</span>';
-            $buildingStatusBadge = $record->building_status == 1 ? '<span class="badge bg-success-subtle text-success">Ready to move</span>' : '<span class="badge bg-warning-subtle text-warning">Under Construction</span>';
-
-            $data_arr[] = [
-                "id" => ++$start,
+            return [
+                "id" => $sno,
                 "name" => $record->name,
                 "address" => $record->state->name . ', ' . $record->city->name . ', ' . $record->area->name,
                 "base_price" => $record->from_price . '-' . $record->to_price,
@@ -288,25 +267,10 @@ class ProjectsController extends Controller
                 "builder_details" => $record->builder->name,
                 // "ratings" => $record->ratings,
                 "status" => $statusBadge,
-                "action" => $editButton . ' ' . $deleteButton.''.$viewButton,
+                "action" => $editButton . ' ' . $deleteButton . '' . $viewButton,
             ];
-        }
-
-        $response = [
-            "draw" => intval($draw),
-            "iTotalRecords" => $totalRecords,
-            "iTotalDisplayRecords" => $totalRecordswithFilter,
-            "aaData" => $data_arr,
-        ];
+        });
 
         return response()->json($response);
-        // return $this->getTableData(City::class, $request, 'city');
     }
-
-    // public function addProject(){
-    //     $page_title = "Add Project";
-    //     $module_name = "Add";
-
-    //     return view('projects.add', compact('page_title', 'module_name'));
-    // }
 }

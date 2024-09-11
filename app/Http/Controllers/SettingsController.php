@@ -82,17 +82,17 @@ class SettingsController extends Controller
             ],
             'company_name' => [
                 'required',
-                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/',
+                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/',
                 Rule::unique('settings')->ignore($id),
             ],
             'gst_no' => [
                 'required',
-                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/',
+                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/',
                 Rule::unique('settings')->ignore($id),
             ],
             'ph_no' => [
                 'required',
-                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/',
+                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/',
                 Rule::unique('settings')->ignore($id),
             ],
             'company_logo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',

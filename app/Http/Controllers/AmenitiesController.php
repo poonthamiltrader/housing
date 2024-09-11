@@ -46,7 +46,7 @@ class AmenitiesController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'name' => 'required|regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/|unique:amenities,name',
+            'name' => 'required|regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/|unique:amenities,name',
             'status' => 'required|in:1,2',
         ];
 
@@ -105,7 +105,7 @@ class AmenitiesController extends Controller
         $rules = [
             'name' => [
                 'required',
-                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/',
+                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/',
                 Rule::unique('amenities')->ignore($id),
             ],
             'status' => 'required|in:1,2',

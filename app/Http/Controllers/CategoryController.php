@@ -47,7 +47,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'name' => 'required|regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/|unique:category,name',
+            'name' => 'required|regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/|unique:category,name',
             'status' => 'required|in:1,2',
         ];
 
@@ -107,7 +107,7 @@ class CategoryController extends Controller
         $rules = [
             'name' => [
                 'required',
-                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/',
+                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/',
                 Rule::unique('category')->ignore($id),
             ],
             'status' => 'required|in:1,2',
