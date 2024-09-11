@@ -18,6 +18,7 @@ use App\Http\Controllers\PackageController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\AdvertisementController;
+use App\Http\Controllers\BuilderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,10 +73,18 @@ Route::get('getSubCategoryIndexData', [SubcategoryController::class, 'getSubCate
 Route::resource('propertytypes', PropertytypesController::class)->middleware('auth');
 Route::get('getPropertytypesIndexData', [PropertytypesController::class, 'getPropertytypesIndexData'])->name('getPropertytypesIndexData');
 
+//builder details master
+Route::resource('builder', BuilderController::class)->middleware('auth');
+Route::get('getBuilderIndexData', [BuilderController::class, 'getBuilderIndexData'])->name('getBuilderIndexData');
+
 Route::resource('property', PropertyController::class)->middleware('auth');
 Route::resource('buyer', BuyerController::class)->middleware('auth');
 Route::resource('seller', SellerController::class)->middleware('auth');
+
+
 Route::resource('projects', ProjectsController::class)->middleware('auth');
+Route::get('getProjectIndexData', [ProjectsController::class, 'getProjectIndexData'])->name('getProjectIndexData');
+// Route::get('add-project', [ProjectsController::class, 'addProject'])->name('add-project');
 
 // package routes
 Route::resource('package', PackageController::class)->middleware('auth');

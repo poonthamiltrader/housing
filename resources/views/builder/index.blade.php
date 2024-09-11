@@ -30,33 +30,26 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header d-sm-flex justify-content-between">
                                 <h5 class="card-title mb-0">{{ $page_title }}</h5>
-                                <a href="{{ url('projects/create') }}"
+                                <button type="button" onclick="addEditModal('','builder','create','GET')"
                                     class="btn btn-success waves-effect waves-light">
                                     <i class="ri-add-circle-line align-middle me-1"></i>Add New
-                                </a>
+                                </button>
                             </div>
                             <div class="card-body">
                                 <table id="ajax-datatables_wrapper" class="table table-bordered">
                                     <thead>
                                         <tr>
                                             <th>Sno</th>
-                                            <th>Project Name</th>
+                                            <th>Name</th>
                                             <th>Address</th>
-                                            <th title="Base price - High Price">BP - HP</th>
-                                            <th>Plot Area</th>
-                                            <th>Building Status</th>
-                                            <th>Completion Date</th>
-                                            <th>Floor Plan</th>
-                                            <th>Area Details</th>
-                                            <th>Price Details</th>
-                                            <th>Project Description</th>
-                                            <th>Builder Details</th>
-                                            {{-- <th>Ratings</th> --}}
+                                            <th>Description</th>
+                                            <th>Mobile</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -76,7 +69,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const route = '{{ route('getProjectIndexData') }}';
+            const route = '{{ route('getBuilderIndexData') }}';
             const columns = [{
                     data: 'id'
                 },
@@ -84,38 +77,14 @@
                     data: 'name'
                 },
                 {
-                    data: 'address'
+                    data: 'address1'
                 },
                 {
-                    data: 'base_price'
+                    data: 'description'
                 },
                 {
-                    data: 'plot_area'
+                    data: 'mobile'
                 },
-                {
-                    data: 'building_status'
-                },
-                {
-                    data: 'Completion_date'
-                },
-                {
-                    data: 'floor_plan'
-                },
-                {
-                    data: 'area_details'
-                },
-                {
-                    data: 'price_details'
-                },
-                {
-                    data: 'project_description'
-                },
-                {
-                    data: 'builder_details'
-                },
-                // {
-                //     data: 'ratings'
-                // },
                 {
                     data: 'status'
                 },
