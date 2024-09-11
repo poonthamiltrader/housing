@@ -11,47 +11,12 @@
                                 <div class="col-12">
                                     <div class="d-flex align-items-lg-center flex-lg-row flex-column">
                                         <div class="flex-grow-1">
-                                            <h4 class="fs-16 mb-1">Good Morning, Anna!</h4>
+                                            <h4 class="fs-16 mb-1">Good Morning, {!! ucfirst(Auth::user()->name) !!}</h4>
                                             <p class="text-muted mb-0">
                                                 Here's what's happening with your store today.
                                             </p>
                                         </div>
-                                        <div class="mt-3 mt-lg-0">
-                                            <form action="javascript:void(0);">
-                                                <div class="row g-3 mb-0 align-items-center">
-                                                    <div class="col-sm-auto">
-                                                        <div class="input-group">
-                                                            <input type="text"
-                                                                class="form-control border-0 dash-filter-picker shadow"
-                                                                data-provider="flatpickr" data-range-date="true"
-                                                                data-date-format="d M, Y"
-                                                                data-deafult-date="01 Jan 2022 to 31 Jan 2022" />
-                                                            <div
-                                                                class="input-group-text bg-primary border-primary text-white">
-                                                                <i class="ri-calendar-2-line"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end col-->
-                                                    <div class="col-auto">
-                                                        <button type="button"
-                                                            class="btn rounded-pill btn-success waves-effect waves-light">
-                                                            <i class="ri-add-circle-line align-middle me-1"></i>
-                                                            Add New
-                                                        </button>
-                                                    </div>
-                                                    <!--end col-->
-                                                    <div class="col-auto">
-                                                        <button type="button"
-                                                            class="btn btn-soft-info btn-icon waves-effect waves-light layout-rightside-btn shadow-none">
-                                                            <i class="ri-pulse-line"></i>
-                                                        </button>
-                                                    </div>
-                                                    <!--end col-->
-                                                </div>
-                                                <!--end row-->
-                                            </form>
-                                        </div>
+                                        
                                     </div>
                                     <!-- end card header -->
                                 </div>
@@ -67,7 +32,7 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-grow-1 overflow-hidden">
                                                     <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
-                                                        Total Earnings
+                                                        Total Inquires
                                                     </p>
                                                 </div>
                                                 <div class="flex-shrink-0">
@@ -79,10 +44,9 @@
                                             <div class="d-flex align-items-end justify-content-between mt-4">
                                                 <div>
                                                     <h4 class="fs-22 fw-semibold ff-secondary mb-4">
-                                                        $<span class="counter-value" data-target="559.25">0</span>
+                                                        <span class="counter-value" data-target="559">0</span>
                                                     </h4>
-                                                    <a href="#" class="text-decoration-underline">View net
-                                                        earnings</a>
+                                                  
                                                 </div>
                                                 <div class="avatar-sm flex-shrink-0">
                                                     <span class="avatar-title bg-success rounded fs-3">
@@ -104,7 +68,7 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-grow-1 overflow-hidden">
                                                     <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
-                                                        Orders
+                                                        Buyers
                                                     </p>
                                                 </div>
                                                 <div class="flex-shrink-0">
@@ -116,9 +80,8 @@
                                             <div class="d-flex align-items-end justify-content-between mt-4">
                                                 <div>
                                                     <h4 class="fs-22 fw-semibold ff-secondary mb-4">
-                                                        <span class="counter-value" data-target="36894">0</span>
+                                                        <span class="counter-value" data-target="3689">0</span>
                                                     </h4>
-                                                    <a href="#" class="text-decoration-underline">View all orders</a>
                                                 </div>
                                                 <div class="avatar-sm flex-shrink-0">
                                                     <span class="avatar-title bg-info rounded fs-3">
@@ -140,7 +103,7 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-grow-1 overflow-hidden">
                                                     <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
-                                                        Customers
+                                                        Seller
                                                     </p>
                                                 </div>
                                                 <div class="flex-shrink-0">
@@ -152,9 +115,8 @@
                                             <div class="d-flex align-items-end justify-content-between mt-4">
                                                 <div>
                                                     <h4 class="fs-22 fw-semibold ff-secondary mb-4">
-                                                        <span class="counter-value" data-target="183.35">0</span>M
+                                                        <span class="counter-value" data-target="183">0</span>M
                                                     </h4>
-                                                    <a href="#" class="text-decoration-underline">See details</a>
                                                 </div>
                                                 <div class="avatar-sm flex-shrink-0">
                                                     <span class="avatar-title bg-warning rounded fs-3">
@@ -176,19 +138,18 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-grow-1 overflow-hidden">
                                                     <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
-                                                        My Balance
+                                                        Total Properties
                                                     </p>
                                                 </div>
                                                 <div class="flex-shrink-0">
-                                                    <h5 class="text-muted fs-14 mb-0">+0.00 %</h5>
+                                                    <h5 class="text-muted fs-14 mb-0">+24.00 %</h5>
                                                 </div>
                                             </div>
                                             <div class="d-flex align-items-end justify-content-between mt-4">
                                                 <div>
                                                     <h4 class="fs-22 fw-semibold ff-secondary mb-4">
-                                                        $<span class="counter-value" data-target="165.89">0</span>k
+                                                        $<span class="counter-value" data-target="1657">0</span>k
                                                     </h4>
-                                                    <a href="#" class="text-decoration-underline">Withdraw money</a>
                                                 </div>
                                                 <div class="avatar-sm flex-shrink-0">
                                                     <span class="avatar-title bg-danger rounded fs-3">
