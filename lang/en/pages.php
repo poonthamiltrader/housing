@@ -16,7 +16,7 @@ return [
     "projects" => "Projects Management",
     "review" => "Review Management",
     "advertisement" => "Advertisement Management",
-
+    "builder" => "Builder",
     'dashboard' => 'Dashboard',
     'settings' => 'Settings',
 ];
@@ -42,6 +42,3 @@ return [
 
 //     'dashboard' => 'Dashboard',
 // ];
-
-
-

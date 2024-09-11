@@ -60,7 +60,7 @@ class StateController extends Controller
     {
         // dd($request);
         $rules = [
-            'name' => 'required|regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/|unique:state,name',
+            'name' => 'required|regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/|unique:state,name',
             'status' => 'required|in:1,2',
         ];
 
@@ -120,7 +120,7 @@ class StateController extends Controller
         $rules = [
             'name' => [
                 'required',
-                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/',
+                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/',
                 Rule::unique('state')->ignore($id),
             ],
             'status' => 'required|in:1,2',

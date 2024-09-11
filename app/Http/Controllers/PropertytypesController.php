@@ -47,7 +47,7 @@ class PropertytypesController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'name' => 'required|regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/|unique:property_types,name',
+            'name' => 'required|regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/|unique:property_types,name',
             'status' => 'required|in:1,2',
         ];
 
@@ -106,7 +106,7 @@ class PropertytypesController extends Controller
         $rules = [
             'name' => [
                 'required',
-                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/',
+                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/',
                 Rule::unique('property_types')->ignore($id),
             ],
             'status' => 'required|in:1,2',

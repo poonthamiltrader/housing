@@ -70,6 +70,10 @@ trait AjaxTableDataTrait
     {
         return '<a class="link-danger fs-15 me-2" href="#" onclick="deleteEntity(\'' . $id . '\', \'' . $entity . '\')"><i class="ri-delete-bin-line"></i></a>';
     }
+    public function getViewButton($id, $entity)
+    {
+        return '<a class="link-danger fs-15 me-2" href="#" onclick="deleteEntity(\'' . $id . '\', \'' . $entity . '\')"><i class="ri-eye-line"></i></a>';
+    }
 
     /**
      * Generate Status Badge
@@ -82,5 +86,12 @@ trait AjaxTableDataTrait
         return $status == 1
             ? '<span class="badge bg-success-subtle text-success">Active</span>'
             : '<span class="badge bg-warning-subtle text-warning">Inactive</span>';
+    }
+
+    public function getBuildingStatusBadge($status)
+    {
+        return $status == 1
+            ? '<span class="badge bg-success-subtle text-success">Ready to move</span>'
+            : '<span class="badge bg-warning-subtle text-warning">Under construction</span>';
     }
 }

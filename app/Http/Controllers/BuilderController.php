@@ -5,9 +5,12 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Builder;
 use Illuminate\Http\Request;
+use App\Traits\AjaxTableDataTrait;
 
 class BuilderController extends Controller
 {
+    use AjaxTableDataTrait;
+
     /**
      * Display a listing of the resource.
      */
@@ -159,40 +162,15 @@ class BuilderController extends Controller
 
     public function getBuilderIndexData(Request $request)
     {
-        // return $this->getTableData(State::class, $request, 'state');
-        // dd($request);
         $model = Builder::class;
         $entity = 'builder';
-        $draw = $request->get('draw');
-        $start = $request->get("start");
-        $rowperpage = $request->get("length");
-        $searchValue = $request->get('search')['value'];
+        $response = $this->getTableData($model, $entity, $request, function ($record, $sno) use ($entity) {
+            $editButton = $this->getEditButton($record->id, $entity);
+            $deleteButton = $this->getDeleteButton($record->id, $entity);
+            $statusBadge = $this->getStatusBadge($record->status);
 
-        // Total records without filters
-        $totalRecords = $model::count();
-
-        // Query for filtered records
-        $query = $model::query();
-
-        if (!empty($searchValue)) {
-            $query->where('name', 'LIKE', '%' . $searchValue . '%');
-        }
-
-        $totalRecordswithFilter = $query->count();
-
-        // Sorting and pagination
-        $query->orderBy('id', 'asc')->skip($start)->take($rowperpage);
-        $records = $query->get();
-
-        $data_arr = [];
-        // $sno = 0;
-        foreach ($records as $record) {
-            $editButton = '<button class="btn btn-primary waves-effect waves-light" onclick="addEditModal(\'' . $record->id . '\', \'' . $entity . '\', \'edit\', \'GET\')" data-bs-toggle="modal" data-bs-target="#' . $entity . '-add-edit" href="#"><i class="ri-pencil-fill"></i></button>';
-            $deleteButton = '<button class="btn btn-danger waves-effect waves-light" href="#" onclick="deleteEntity(\'' . $record->id . '\', \'' . $entity . '\')"><i class="ri-delete-bin-fill"></i></button>';
-            $statusBadge = $record->status == 1 ? '<span class="badge bg-success-subtle text-success">Active</span>' : '<span class="badge bg-warning-subtle text-warning">Inactive</span>';
-
-            $data_arr[] = [
-                "id" => ++$start,
+            return [
+                "id" => $sno,
                 "name" => $record->name,
                 "address1"=>$record->address_1,
                 "address2"=>$record->address_2,
@@ -201,15 +179,8 @@ class BuilderController extends Controller
                 "status" => $statusBadge,
                 "action" => $editButton . ' ' . $deleteButton,
             ];
-        }
-
-        $response = [
-            "draw" => intval($draw),
-            "iTotalRecords" => $totalRecords,
-            "iTotalDisplayRecords" => $totalRecordswithFilter,
-            "aaData" => $data_arr,
-        ];
-
+        });
+       
         return response()->json($response);
     }
 }

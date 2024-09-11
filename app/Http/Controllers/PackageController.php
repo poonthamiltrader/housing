@@ -49,7 +49,7 @@ class PackageController extends Controller
     {
         // dd($request);
         $rules = [
-            'name' => 'required|regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/|unique:packages,name',
+            'name' => 'required|regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/|unique:packages,name',
             'price' => 'required|numeric|min:0',
             'period' => 'required|numeric|min:0',
             'discount' => 'required|numeric|min:0',
@@ -124,7 +124,7 @@ class PackageController extends Controller
         $rules = [
             'name' => [
                 'required',
-                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s]*$/',
+                'regex:/^[a-zA-Z0-9][a-zA-Z0-9\s&\/\-_]*$/',
                 Rule::unique('packages')->ignore($id),
             ],
             'price' => 'required|numeric|min:0',

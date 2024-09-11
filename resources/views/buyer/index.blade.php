@@ -5,7 +5,7 @@
         <div class="page-content">
             <div class="container-fluid">
 
-                <div class="modal fade" id="buyer-add" tabindex="-1" aria-labelledby="buyer-add-label" aria-modal="true">
+                <div class="modal fade" id="buyer-add-edit" tabindex="-1" aria-labelledby="buyer-add-label" aria-modal="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -111,7 +111,7 @@
 
 
                             <div class="page-title-right">
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#buyer-add"
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#buyer-add-edit"
                                     class="btn btn-success waves-effect waves-light">
                                     <i class="ri-add-circle-line align-middle me-1"></i>Add New
                                 </button>
@@ -149,11 +149,11 @@
 
                                             <td><span class="badge bg-success-subtle text-success">Active</span></td>
                                             <td>
-                                                <a class="link-success fs-15 me-2"
+                                                <a class="link-success fs-3 me-2"
                                                     data-bs-toggle="modal" data-bs-target="#buyer-add-edit"
                                                     href="#"><i class="mdi mdi-account-check"></i>
                                                 </a>
-                                                <a class="link-danger fs-15 me-2"
+                                                <a class="link-danger fs-3 me-2"
                                                     data-bs-toggle="modal" data-bs-target="#buyer-add-edit"
                                                     href="#"><i class="mdi mdi-account-remove"></i>
                                                 </a>
@@ -167,11 +167,11 @@
                                             <td>Erode</td>
                                             <td><span class="badge bg-warning-subtle text-warning">Inactive</span></td>
                                             <td>
-                                                <a class="link-success fs-15 me-2"
+                                                <a class="link-success fs-3 me-2"
                                                     data-bs-toggle="modal" data-bs-target="#buyer-add-edit"
                                                     href="#"><i class="mdi mdi-account-check"></i>
                                                 </a>
-                                                <a class="link-danger fs-15 me-2"
+                                                <a class="link-danger fs-3 me-2"
                                                     data-bs-toggle="modal" data-bs-target="#buyer-add-edit"
                                                     href="#"><i class="mdi mdi-account-remove"></i>
                                                 </a>
