@@ -102,6 +102,13 @@
                                 </a>
 
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ url('builder') }}"
+                                    class="nav-link {{ request()->routeIs('builder.*') ? 'active' : '' }}">
+                                    {{ __('pages.builder') }}
+                                </a>
+
+                            </li>
 
                         </ul>
                     </div>

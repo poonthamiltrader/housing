@@ -185,5 +185,5 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
-    "basePath" => "http://localhost/housing",
+    "basePath" => "http://localhost/git_housing/housing",
 ];

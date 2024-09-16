@@ -18,7 +18,7 @@ return new class extends Migration
             $table->longText('address_2')->nullable();
             $table->longText('description')->nullable();
             $table->string('Mobile',10);
-            $table->integer('properties_list');
+            $table->integer('properties_list')->nullable();
             $table->tinyInteger('status')->default(1);
 
             $table->unsignedBigInteger('created_by')->nullable();

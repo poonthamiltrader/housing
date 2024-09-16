@@ -1,4 +1,4 @@
-const basePath = window.location.origin + "/housing/";
+const basePath = window.location.origin + "/git_housing/housing/";
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("#user-form");

@@ -33,9 +33,9 @@ return new class extends Migration
             $table->tinyInteger('status')->default(1);
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('state_id')->references('id')->on('state');
-            $table->foreign('city_id')->references('id')->on('city');
-            $table->foreign('area_id')->references('id')->on('area');
+            // $table->foreign('state_id')->references('id')->on('state');
+            // $table->foreign('city_id')->references('id')->on('city');
+            // $table->foreign('area_id')->references('id')->on('area');
         });
     }
 

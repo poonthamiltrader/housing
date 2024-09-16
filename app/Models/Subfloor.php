@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Amenities extends Model
+class Subfloor extends Model
 {
     use HasFactory;
-    protected $table = 'amenities';
+    protected $table = 'subfloor_details';
 
-    public function projectamenities()
+    public function floor()
     {
-        return $this->hasMany(Projectamenities::class);
+        return $this->belongsTo(Floor::class);
     }
+
 }

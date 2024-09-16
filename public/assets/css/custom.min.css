@@ -1,2 +1,25 @@
 
 /*# sourceMappingURL=custom.min.css.map */
+
+.custom-card1{
+    background-color: #ebf7ec   ;}
+   
+.custom-card2{
+    background-color: #ebf7ec;
+    min-height: 70vh;
+    max-height: 100vh;
+}
+.scrollable {
+    max-height: 250px; /* Adjust the height as per your need */
+    overflow: scroll;
+    /* background-color: #ebf7ec   ; */
+   
+}
+   
+.scrollable::-webkit-scrollbar {
+    width: 0px; /* Reduce scrollbar width */
+}
+       
+      
+   
+  

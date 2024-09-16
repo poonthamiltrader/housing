@@ -26,5 +26,13 @@ class Projectdetails extends Model
     {
         return $this->belongsTo(Builder::class);
     }
+    public function floor()
+    {
+        return $this->belongsTo(Floor::class);
+    }
+    public function projectamenities()
+    {
+        return $this->belongsTo(Projectamenities::class);
+    }
 
 }

@@ -18,21 +18,13 @@ return new class extends Migration
             $table->unsignedBigInteger('state_id');
             $table->unsignedBigInteger('city_id');
             $table->unsignedBigInteger('area_id');
-            $table->bigInteger('from_price');
-            $table->bigInteger('to_price');
-            $table->bigInteger('from_sqft');
-            $table->bigInteger('to_sqft');
             $table->integer('building_status');
             $table->date('completion_date');
-            $table->string('floor_plan');
-            $table->bigInteger('area_details');
-            $table->bigInteger('price_details');
-            $table->longText('project_description')->nullable();
-            $table->integer('ratings');
-            $table->longText('reviews')->nullable();
-            $table->unsignedBigInteger('builder_id');
             $table->tinyInteger('status')->default(1);
-
+            $table->unsignedBigInteger('floor_id');
+            $table->longText('project_description')->nullable();
+            $table->unsignedBigInteger('builder_id');
+            $table->unsignedBigInteger('amenities_id');
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
 
@@ -42,6 +34,8 @@ return new class extends Migration
             $table->foreign('city_id')->references('id')->on('city');
             $table->foreign('area_id')->references('id')->on('area');
             $table->foreign('builder_id')->references('id')->on('builder');
+            $table->foreign('floor_id')->references('id')->on('subfloor_details');
+            $table->foreign('amenities_id')->references('id')->on('project_amenities');
 
 
             $table->timestamps();

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/css/dataTables.bootstrap5.min.css') }}" />
     <!--datatable responsive css-->
     <link rel="stylesheet" href="{{ asset('public/assets/css/responsive.bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/css/select2.min.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('public/assets/css/buttons.dataTables.min.css') }}">
     <!-- jsvectormap css -->
@@ -32,12 +33,12 @@
     <!-- Bootstrap Css -->
     <link href="{{ asset('public/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="{{ asset('public/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-    <!-- App Css-->
-    <link href="{{ asset('public/assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('public/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />    
     <!-- custom Css-->
     <link href="{{ asset('public/assets/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
-
+    <!-- App Css-->
+    <link href="{{ asset('public/assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         .help-block {
             color: #ff0000;

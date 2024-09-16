@@ -41,10 +41,10 @@ class ProjectsController extends Controller
         $states = State::where('status', 1)->pluck('name', 'id');
 
         $builders = Builder::where('status', 1)->pluck('name', 'id');
-        $amenities = Amenities::where('status', 1)->pluck('name', 'id');
-        // dd($builders);
+        $amenities = Amenities::where('status', 1)->get();
+        //  dd( $amenities);
 
-        return view('projects.add', compact('data', 'method', 'states', 'route', 'page_title', 'module_name', 'builders'));
+        return view('projects.add', compact('data', 'method', 'states', 'route', 'page_title', 'module_name', 'builders', 'amenities'));
     }
 
     /**
@@ -96,21 +96,25 @@ class ProjectsController extends Controller
         $data->state_id = $request->state_id;
         $data->city_id = $request->city_id;
         $data->area_id = $request->area_id;
-        $data->builder_id = $request->builder_id;
+        $data->building_status = $request->building_status;
+        $data->completion_date = $request->completion_date;
+        $data->status = $request->status;
+
+        $data->property_id = $request->floor_plan;
         $data->from_price = $request->from_price;
         $data->to_price = $request->to_price;
         $data->from_sqft = $request->from_sqft;
         $data->to_sqft = $request->to_sqft;
-        $data->building_status = $request->building_status;
-        $data->completion_date = $request->completion_date;
-        $data->floor_plan = $request->floor_plan;
-        $data->area_details = $request->area_details;
-        $data->price_details = $request->price_details;
-        $data->project_description = $request->project_description;
-        $data->ratings = $request->ratings;
-        $data->reviews = $request->reviews;
 
-        $data->status = $request->status;
+        $data->floor_id = $request->floor_plan;
+        $data->builtup_area = $request->builtup_area;
+        $data->price = $request->to_price;
+
+
+        $data->builder_id = $request->builder_id;
+        $data->amanities_id = $request->builder_id;
+        $data->project_description = $request->project_description;
+
         $data->created_by = @Auth::user()->id;
 
 
@@ -288,7 +292,7 @@ class ProjectsController extends Controller
                 "builder_details" => $record->builder->name,
                 // "ratings" => $record->ratings,
                 "status" => $statusBadge,
-                "action" => $editButton . ' ' . $deleteButton.''.$viewButton,
+                "action" => $editButton . ' ' . $deleteButton . '' . $viewButton,
             ];
         }
 

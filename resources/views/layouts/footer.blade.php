@@ -72,6 +72,12 @@
 
 <!-- profile-setting init js -->
 <script src="{{ asset('public/assets/js/pages/profile-setting.init.js') }}"></script>
+<script src="{{ asset('public/assets/js/pages/select2.min.js') }}"></script>
+<script src="{{ asset('public/assets/js/pages/select2.init.js') }}"></script>
+
+<!-- form wizard init -->
+ <script src="{{asset('public/assets/js/pages/form-wizard.init.js')}}"></script>
+
 <!-- App js -->
 <script src="{{ asset('public/assets/js/app.js') }}"></script>
 

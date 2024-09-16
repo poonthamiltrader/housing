@@ -9,6 +9,7 @@ return [
     "category" => "Category",
     "subcategory" => "Subcategory",
     "propertytypes" => "Propertytypes",
+    "builder" => "Builder details",
     "property" => "Properties",
     "buyer" => "Buyer's Management",
     "seller" => "Seller's Management",
