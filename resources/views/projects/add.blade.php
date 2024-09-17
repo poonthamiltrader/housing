@@ -203,218 +203,225 @@
                                                             <div class="input-group">
                                                                 <select class="form-select grade_dropdown"
                                                                     name="propertytype_id[]" id="propertytype_id_0">
-                                                                    <option value="">Select
-                                                                        property types</option>
+                                                                    <option value="">Select property type</option>
+                                                                    @foreach ($property_types as $id => $name)
+                                                                        <option value="{{ $id }}">
+                                                                            {{ $name }}</option>
+                                                                    @endforeach
                                                                 </select>
                                                             </div>
-                                                        </td>
-                                                        <td>
-                                                            <input type="number" class="form-control builtup_area"
-                                                                name="from_sqft[]" id="from_sqft_0"
-                                                                placeholder="Enter Built-up Area (e.g., sqft)">
-                                                        </td>
-                                                        <td>
-                                                            <input type="number" class="form-control builtup_area"
-                                                                name="to_sqft[]" id="to_sqft_0"
-                                                                placeholder="Enter Built-up Area (e.g., sqft)">
-                                                        </td>
-                                                        <td>
-                                                            <input type="number" class="form-control base_price"
-                                                                id="from_price_0" name="from_price[]"
-                                                                placeholder="Enter Base Price">
-                                                        </td>
-                                                        <td>
-                                                            <input type="number" class="form-control base_price"
-                                                                id="to_price_0" name="to_price[]"
-                                                                placeholder="Enter Base Price">
-                                                        </td>
-                                                        <td id="remove" style="white-space: nowrap;">
-                                                            <button type="button"
-                                                                class="btn btn-success position-relative p-0 avatar-xs rounded add-row"
-                                                                id="add-row">
-                                                                <span class="avatar-title bg-transparent">
-                                                                    <i class="ri-add-fill"></i>
-                                                                </span>
-                                                            </button>
 
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
                                         </div>
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control builtup_area" name="from_sqft[]"
+                                                id="from_sqft_0" placeholder="Enter Built-up Area (e.g., sqft)">
 
-                                        <hr style="padding:10px 0px;">
-                                        <div>
-                                            <h5>Sub-floor Details</h5>
-                                        </div>
-                                        <div class="scrollable">
-                                            <table class="table table-bordered" data-repeater-list="items"
-                                                id="sortable-table2">
-                                                <thead>
-                                                    <tr>
-                                                        <th width="3%">#</th>
-                                                        <th>Property Types</th>
-                                                        <th>Built-up Area</th>
-                                                        <th>Base Price</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="table-active">
-                                                        <td>
-                                                            <input type="hidden" id="auto_value2" value="1">
-                                                            <span class="auto_inc" id="auto_inc_0">1</span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="input-group">
-                                                                <select class="form-select grade_dropdown"
-                                                                    name="subsubpropertytype_id[]"
-                                                                    id="subpropertytype_id_0">
-                                                                    <option value="">Select
-                                                                        Sub property types</option>
-                                                                </select>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <input type="number" class="form-control builtup_area"
-                                                                name="builtup_area[]" id="builtup_area_0"
-                                                                placeholder="Enter Built-up Area (e.g., sqft)">
-                                                        </td>
-                                                        <td>
-                                                            <input type="number" class="form-control base_price"
-                                                                id="base_price_0" name="base_price[]"
-                                                                placeholder="Enter Base Price">
-                                                        </td>
-                                                        <td id="remove" style="white-space: nowrap;">
-                                                            <button type="button"
-                                                                class="btn btn-success position-relative p-0 avatar-xs rounded add-row"
-                                                                id="add-row">
-                                                                <span class="avatar-title bg-transparent">
-                                                                    <i class="ri-add-fill"></i>
-                                                                </span>
-                                                            </button>
+                                        </td>
 
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-
-                                        <div class="d-flex align-items-start gap-3 mt-4">
-                                            <button type="button" class="btn btn-light btn-label previestab"
-                                                data-previous="general-info-tab"><i
-                                                    class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
-                                                Back </button>
+                                        <td>
+                                            <input type="number" class="form-control builtup_area" name="to_sqft[]"
+                                                id="to_sqft_0" placeholder="Enter Built-up Area (e.g., sqft)">
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control base_price" id="from_price_0"
+                                                name="from_price[]" placeholder="Enter Base Price">
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control base_price" id="to_price_0"
+                                                name="to_price[]" placeholder="Enter Base Price">
+                                        </td>
+                                        <td id="remove" style="white-space: nowrap;">
                                             <button type="button"
-                                                class="btn btn-success btn-label right ms-auto nexttab nexttab"
-                                                data-nexttab="project-description-tab"><i
-                                                    class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>
-                                                Next</button>
-                                        </div>
+                                                class="btn btn-success position-relative p-0 avatar-xs rounded add-row"
+                                                id="add-row">
+                                                <span class="avatar-title bg-transparent">
+                                                    <i class="ri-add-fill"></i>
+                                                </span>
+                                            </button>
+
+                                        </td>
+                                        </tr>
+                                        </tbody>
+                                        </table>
                                     </div>
-                                    <div class="tab-pane fade" id="project-description" role="tabpanel"
-                                        aria-labelledby="project-description-tab">
-                                        <div>
-                                            <h5>Project Description</h5>
-                                            <p class="text-muted">Fill in your project description
-                                            </p>
-                                        </div>
 
-                                        <div class="form-group col-12">
-                                            {!! Form::label('project_description', 'Project Description') !!}
-                                            {!! Form::textarea('project_description', old('project_description'), [
-                                                'class' => 'form-control',
-                                                'rows' => 5,
-                                                'placeholder' => 'Enter your project description here...',
-                                                'id' => 'project_description',
-                                            ]) !!}
-                                        </div>
-
-                                        <div class="d-flex justify-content-between align-items-center gap-3 mt-4">
-                                            <button type="button" class="btn btn-light btn-label previestab"
-                                                data-previous="floor-details-tab">
-                                                <i class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
-                                                Back
-                                            </button>
-                                            <button type="button" class="btn btn-success btn-label nexttab"
-                                                data-nexttab="builder-details-tab">
-                                                Next <i
-                                                    class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>
-                                            </button>
-                                        </div>
+                                    <hr style="padding:10px 0px;">
+                                    <div>
+                                        <h5>Sub-floor Details</h5>
                                     </div>
-                                    <div class="tab-pane fade" id="builder-details" role="tabpanel" aria-labelledby="builder-details-tab">
-                                        <div>
-                                            <h5>Builder Details</h5>
-                                            <p class="text-muted">Fill Builder Details</p>
-                                        </div>
-                                    
-                                        <div class="col-md-6">
-                                            {!! Form::label('builder_id', 'Select Builder Name', ['class' => 'form-label']) !!}
-                                            {!! Form::select(
-                                                'builder_id',
-                                                isset($builders) ? ['' => 'Select Builders'] + $builders->toArray() : ['' => 'Select Builder'],
-                                                old('builder_id'),
-                                                [
-                                                    'class' => 'form-select',
-                                                    'id' => 'builder_id',
-                                                ],
-                                            ) !!}
-                                        </div>
-                                    
-                                        <div class="d-flex align-items-start gap-3 mt-4">
-                                            <button type="button" class="btn btn-light btn-label previestab" data-previous="project-description-tab">
-                                                <i class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i> Back
-                                            </button>
-                                            <button type="button" class="btn btn-success btn-label nexttab ms-auto" data-nexttab="amenities-tab">
-                                                Next <i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>
-                                            </button>
-                                        </div>
+                                    <div class="scrollable">
+                                        <table class="table table-bordered" data-repeater-list="items"
+                                            id="sortable-table2">
+                                            <thead>
+                                                <tr>
+                                                    <th width="3%">#</th>
+                                                    <th>Property Types</th>
+                                                    <th>Built-up Area</th>
+                                                    <th>Base Price</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="table-active">
+                                                    <td>
+                                                        <input type="hidden" id="auto_value2" value="1">
+                                                        <span class="auto_inc" id="auto_inc_0">1</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <select class="form-select grade_dropdown"
+                                                                name="subsubpropertytype_id[]" id="subpropertytype_id_0">
+                                                                <option value="">Select
+                                                                    Sub property types</option>
+
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" class="form-control builtup_area"
+                                                            name="builtup_area[]" id="builtup_area_0"
+                                                            placeholder="Enter Built-up Area (e.g., sqft)">
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" class="form-control base_price"
+                                                            id="base_price_0" name="base_price[]"
+                                                            placeholder="Enter Base Price">
+                                                    </td>
+                                                    <td id="remove" style="white-space: nowrap;">
+                                                        <button type="button"
+                                                            class="btn btn-success position-relative p-0 avatar-xs rounded add-row"
+                                                            id="add-row">
+                                                            <span class="avatar-title bg-transparent">
+                                                                <i class="ri-add-fill"></i>
+                                                            </span>
+                                                        </button>
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    
-                                    <div class="tab-pane fade" id="amenities" role="tabpanel"
-                                        aria-labelledby="amenities-tab">
-                                        <div>
-                                            <h5>Amenities</h5>
-                                            <p class="text-muted">Fill Amenities</p>
-                                        </div>
-
-                                        <div class="hstack gap-2 flex-wrap">
-
-                                            @foreach ($amenities as $item)
-                                                <input type="checkbox" class="btn-check" id="btn-check-outlined"
-                                                    value="{{ $item->id }}">
-                                                <label class="btn btn-outline-primary shadow-none"
-                                                    for="btn-check-outlined">{!! $item->name !!}</label>
-                                            @endforeach
 
 
+                                    <div class="d-flex align-items-start gap-3 mt-4">
+                                        <button type="button" class="btn btn-light btn-label previestab"
+                                            data-previous="general-info-tab"><i
+                                                class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
+                                            Back </button>
+                                        <button type="button"
+                                            class="btn btn-success btn-label right ms-auto nexttab nexttab"
+                                            data-nexttab="project-description-tab"><i
+                                                class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>
+                                            Next</button>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="project-description" role="tabpanel"
+                                    aria-labelledby="project-description-tab">
+                                    <div>
+                                        <h5>Project Description</h5>
+                                        <p class="text-muted">Fill in your project description
+                                        </p>
+                                    </div>
 
-                                        </div>
+                                    <div class="form-group col-12">
+                                        {!! Form::label('project_description', 'Project Description') !!}
+                                        {!! Form::textarea('project_description', old('project_description'), [
+                                            'class' => 'form-control',
+                                            'rows' => 5,
+                                            'placeholder' => 'Enter your project description here...',
+                                            'id' => 'project_description',
+                                        ]) !!}
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center gap-3 mt-4">
+                                        <button type="button" class="btn btn-light btn-label previestab"
+                                            data-previous="floor-details-tab">
+                                            <i class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
+                                            Back
+                                        </button>
+                                        <button type="button" class="btn btn-success btn-label nexttab"
+                                            data-nexttab="builder-details-tab">
+                                            Next <i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="builder-details" role="tabpanel"
+                                    aria-labelledby="builder-details-tab">
+                                    <div>
+                                        <h5>Builder Details</h5>
+                                        <p class="text-muted">Fill Builder Details</p>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        {!! Form::label('builder_id', 'Select Builder Name', ['class' => 'form-label']) !!}
+                                        {!! Form::select(
+                                            'builder_id[]', // Name should be an array
+                                            isset($builders) ? ['' => 'Select Builders'] + $builders->toArray() : ['' => 'Select Builder'],
+                                            old('builder_id'), // Keep old values for validation
+                                            [
+                                                'class' => 'form-select',
+                                                'id' => 'builder_id',
+                                                'multiple' => 'multiple', // Add multiple attribute
+                                            ],
+                                        ) !!}
+                                    </div>
 
 
-
-                                        <div class="d-flex align-items-start gap-3 mt-4">
-                                            <button type="button" class="btn btn-light btn-label previestab"
-                                                data-previous="builder-details-tab"><i
-                                                    class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
-                                                Back </button>
-                                            <button type="submit" class="btn btn-primary btn-label right ms-auto">
-                                                Submit <i class="ri-check-line label-icon align-middle fs-16 ms-2"></i>
-                                            </button>
-                                        </div>
+                                    <div class="d-flex align-items-start gap-3 mt-4">
+                                        <button type="button" class="btn btn-light btn-label previestab"
+                                            data-previous="project-description-tab">
+                                            <i class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i> Back
+                                        </button>
+                                        <button type="button" class="btn btn-success btn-label nexttab ms-auto"
+                                            data-nexttab="amenities-tab">
+                                            Next <i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>
+                                        </button>
                                     </div>
                                 </div>
 
+                                <div class="tab-pane fade" id="amenities" role="tabpanel"
+                                    aria-labelledby="amenities-tab">
+                                    <div>
+                                        <h5>Amenities</h5>
+                                        <p class="text-muted">Fill Amenities</p>
+                                    </div>
 
-                                {!! Form::close() !!}
+                                    <div class="hstack gap-2 flex-wrap">
+
+                                        @foreach ($amenities as $item)
+                                            <input type="checkbox" class="btn-check" id="btn-check-outlined"
+                                                value="{{ $item->id }}">
+                                            <label class="btn btn-outline-primary shadow-none"
+                                                for="btn-check-outlined">{!! $item->name !!}</label>
+                                        @endforeach
+
+
+
+                                    </div>
+
+
+
+                                    <div class="d-flex align-items-start gap-3 mt-4">
+                                        <button type="button" class="btn btn-light btn-label previestab"
+                                            data-previous="builder-details-tab"><i
+                                                class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
+                                            Back </button>
+                                        <button type="submit" class="btn btn-primary btn-label right ms-auto">
+                                            Submit <i class="ri-check-line label-icon align-middle fs-16 ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
+
+
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
@@ -495,5 +502,29 @@
             initializeTableHandlers("#sortable-table2", "#auto_value2");
 
         });
+        
     </script>
+     <script>
+        const propertyTypeSelect = document.getElementById('propertytype_id_0');
+        // console.log(propertyTypeSelect);
+        const subPropertyTypeSelect = document.getElementById('subpropertytype_id_0');
+
+        // Function to update the second select box based on the selected options in the first one
+        function updateSubproperty() {
+            const selectedOptions = Array.from(propertyTypeSelect.selectedOptions);
+            subPropertyTypeSelect.innerHTML = ''; // Clear current options
+
+            selectedOptions.forEach(option => {
+                const newOption = document.createElement('option');
+                // console.log(newOption);
+                newOption.value = option.value;
+                newOption.text = option.text;
+                subPropertyTypeSelect.appendChild(newOption);
+            });
+        }
+
+        // Listen for changes in the first select box and update the second one accordingly
+        propertyTypeSelect.addEventListener('change', updateSubproperty);
+    </script>
+    
 @endsection

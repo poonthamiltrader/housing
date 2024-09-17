@@ -19,6 +19,7 @@ return new class extends Migration
             $table->bigInteger('to_price');
             $table->bigInteger('from_sqft');
             $table->bigInteger('to_sqft');
+            $table->tinyInteger('status')->default(1);
 
             $table->timestamps();
             $table->foreign('propertytype_id')->references('id')->on('property_types');

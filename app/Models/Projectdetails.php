@@ -34,5 +34,9 @@ class Projectdetails extends Model
     {
         return $this->belongsTo(Projectamenities::class);
     }
+    public function propertytypes()
+    {
+        return $this->belongsTo(Propertytypes::class);
+    }
 
 }

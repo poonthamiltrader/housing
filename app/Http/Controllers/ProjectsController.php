@@ -7,9 +7,11 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 // use App\Models\Area;
 use App\Models\Builder;
+use App\Models\Floor;
 // use App\Models\City;
 use App\Models\Projectdetails;
 use App\Models\Projects;
+use App\Models\Propertytypes;
 use App\Models\State;
 use Illuminate\Http\Request;
 
@@ -42,9 +44,10 @@ class ProjectsController extends Controller
 
         $builders = Builder::where('status', 1)->pluck('name', 'id');
         $amenities = Amenities::where('status', 1)->get();
-        //  dd( $amenities);
+        $property_types = Propertytypes::where('status', 1)->pluck('name', 'id');
+        // dd($property_types);
 
-        return view('projects.add', compact('data', 'method', 'states', 'route', 'page_title', 'module_name', 'builders', 'amenities'));
+        return view('projects.add', compact('data', 'method', 'states', 'route', 'page_title', 'module_name', 'builders', 'amenities','property_types'));
     }
 
     /**
