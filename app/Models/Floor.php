@@ -16,6 +16,6 @@ class Floor extends Model
     }
     public function projectdetails()
     {
-        return $this->hasMany(Projectdetails::class);
+        return $this->belongsTo(Projectdetails::class,'project_id');
     }
 }

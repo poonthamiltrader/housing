@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('project_amenities', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->unsignedBigInteger('amenities_id');
             $table->unsignedBigInteger('project_id');
             $table->tinyInteger('status')->default(1);

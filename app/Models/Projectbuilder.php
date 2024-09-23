@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Projectamenities extends Model
+class Projectbuilder extends Model
 {
     use HasFactory;
-    protected $table = 'project_amenities';
+    protected $table = 'project_builder';
 
-    public function amenities()
+    public function builder()
     {
-        return $this->belongsTo(Amenities::class);
+        return $this->belongsTo(Builder::class);
     }
     // public function projectdetails()
     // {

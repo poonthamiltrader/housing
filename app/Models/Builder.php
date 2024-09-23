@@ -9,8 +9,14 @@ class Builder extends Model
 {
     use HasFactory;
     protected $table = 'builder';
-    public function projectdetails()
+
+    public function projectbuilder()
     {
-        return $this->hasMany(Projectdetails::class);
+        return $this->hasMany(Projectbuilder::class);
     }
+
+    // public function projectdetails()
+    // {
+    //     return $this->hasMany(Projectdetails::class);
+    // }
 }

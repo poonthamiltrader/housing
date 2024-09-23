@@ -24,8 +24,8 @@ return new class extends Migration
             $table->tinyInteger('is_serventroom')->default(0);
             $table->tinyInteger('is_storeroom')->default(0);
             $table->tinyInteger('is_furnished')->default(0);
-            $table->tinyInteger('is_semifurnished')->default(0);
-            $table->tinyInteger('is_unfurnished')->default(0);
+            // $table->tinyInteger('is_semifurnished')->default(0);
+            // $table->tinyInteger('is_unfurnished')->default(0);
             $table->Integer('covered_parking');
             $table->Integer('open_parking');
             $table->Integer('total_floors');

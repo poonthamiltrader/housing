@@ -18,4 +18,8 @@ class Area extends Model
     {
         return $this->belongsTo(State::class);
     }
+    public function postproperty()
+    {
+        return $this->hasMany(PostProperty::class);
+    }
 }

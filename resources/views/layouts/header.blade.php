@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="{{ asset('public/assets/css/dataTables.bootstrap5.min.css') }}" />
     <!--datatable responsive css-->
     <link rel="stylesheet" href="{{ asset('public/assets/css/responsive.bootstrap.min.css') }}" />
+
+    <link rel="stylesheet" href="{{ asset('public/assets/libs/dropzone/dropzone.css') }}" type="text/css" />
+
+
     <link rel="stylesheet" href="{{ asset('public/assets/css/select2.min.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('public/assets/css/buttons.dataTables.min.css') }}">

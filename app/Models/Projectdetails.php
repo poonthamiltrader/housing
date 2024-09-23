@@ -22,18 +22,22 @@ class Projectdetails extends Model
     {
         return $this->belongsTo(State::class);
     }
-    public function builder()
-    {
-        return $this->belongsTo(Builder::class);
-    }
+    // public function builder()
+    // {
+    //     return $this->hasMany(Builder::class);
+    // }
     public function floor()
     {
-        return $this->belongsTo(Floor::class);
+        return $this->hasMany(Floor::class, 'project_id');
     }
     public function projectamenities()
     {
         return $this->belongsTo(Projectamenities::class);
     }
+    // public function projectbuilder()
+    // {
+    //     return $this->hasMany(Projectbuilder::class, 'project_id');
+    // }
     public function propertytypes()
     {
         return $this->belongsTo(Propertytypes::class);

@@ -5,17 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Propertytypes extends Model
+class PostPropertyImages extends Model
 {
     use HasFactory;
-    protected $table = 'property_types';
+    protected $table='postproperty_images';
 
-    public function projectdetails()
-    {
-        return $this->hasMany(Projectdetails::class);
-    }
     public function postproperty()
     {
         return $this->hasMany(PostProperty::class);
     }
+
 }

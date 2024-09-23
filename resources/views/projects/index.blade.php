@@ -51,12 +51,6 @@
                                             <th>Plot Area</th>
                                             <th>Building Status</th>
                                             <th>Completion Date</th>
-                                            <th>Floor Plan</th>
-                                            <th>Area Details</th>
-                                            <th>Price Details</th>
-                                            <th>Project Description</th>
-                                            <th>Builder Details</th>
-                                            {{-- <th>Ratings</th> --}}
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -97,25 +91,7 @@
                 },
                 {
                     data: 'Completion_date'
-                },
-                {
-                    data: 'floor_plan'
-                },
-                {
-                    data: 'area_details'
-                },
-                {
-                    data: 'price_details'
-                },
-                {
-                    data: 'project_description'
-                },
-                {
-                    data: 'builder_details'
-                },
-                // {
-                //     data: 'ratings'
-                // },
+                },             
                 {
                     data: 'status'
                 },

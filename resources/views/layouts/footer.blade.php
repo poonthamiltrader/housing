@@ -75,6 +75,11 @@
 <script src="{{ asset('public/assets/js/pages/select2.min.js') }}"></script>
 <script src="{{ asset('public/assets/js/pages/select2.init.js') }}"></script>
 
+ <!-- dropzone min -->
+ <script src="{{ asset("public/assets/libs/dropzone/dropzone-min.js")}}"></script>
+ <script src="{{ asset("public/assets/js/pages/form-file-upload.init.js")}}"></script>
+
+
 <!-- form wizard init -->
  <script src="{{asset('public/assets/js/pages/form-wizard.init.js')}}"></script>
 

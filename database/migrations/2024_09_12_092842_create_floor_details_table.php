@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('floor_details', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('propertytype_id');
+            $table->unsignedBigInteger('project_id');
             $table->bigInteger('from_price');
             $table->bigInteger('to_price');
             $table->bigInteger('from_sqft');
@@ -23,6 +24,7 @@ return new class extends Migration
 
             $table->timestamps();
             $table->foreign('propertytype_id')->references('id')->on('property_types');
+            $table->foreign('project_id')->references('id')->on('project_details');
 
         });
     }

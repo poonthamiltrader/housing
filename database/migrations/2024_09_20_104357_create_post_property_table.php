@@ -11,26 +11,33 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('project_details', function (Blueprint $table) {
+        Schema::create('post_property', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->longText('address')->nullable();
-            $table->unsignedBigInteger('state_id');
+            $table->unsignedBigInteger('propertytype_id');
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('parent_id')->nullable();
+            $table->unsignedBigInteger('grandparent_id')->nullable();
             $table->unsignedBigInteger('city_id');
             $table->unsignedBigInteger('area_id');
-            $table->integer('building_status');
-            $table->date('completion_date');
+            $table->text('address1')->nullable();
+            $table->bigInteger('exepected_price')->nullable();
+            $table->bigInteger('exepected_rent')->nullable();
+            $table->bigInteger('extra_charges')->nullable();
+            $table->bigInteger('deposit_value')->nullable();
+            $table->string('agreement_duration')->nullable();
+            $table->string('months_notice')->nullable();
+            $table->longText('description')->nullable();
             $table->tinyInteger('status')->default(1);
-            $table->longText('project_description')->nullable();
-            $table->text('img_path')->nullable();
+
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
 
             $table->foreign('created_by')->references('id')->on('users')->onDelete('set null');
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');
-            $table->foreign('state_id')->references('id')->on('state');
             $table->foreign('city_id')->references('id')->on('city');
             $table->foreign('area_id')->references('id')->on('area');
+            $table->foreign('category_id')->references('id')->on('category');
+            $table->foreign('propertytype_id')->references('id')->on('property_types');
 
 
             $table->timestamps();
@@ -42,6 +49,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('project_details');
+        Schema::dropIfExists('post_property');
     }
 };

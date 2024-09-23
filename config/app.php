@@ -186,4 +186,5 @@ return [
     ])->toArray(),
 
     "basePath" => "http://localhost/git_housing/housing",
+    'api_key' => env('API_KEY', 'default-api-key'),
 ];
